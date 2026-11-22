@@ -1,0 +1,51 @@
+<svg viewBox="0 0 512 512" width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Vibrant Outer Rim Gradient -->
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A5B4FC"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+
+    <!-- Left Prism Wing Facet -->
+    <linearGradient id="prismFacetLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+
+    <!-- Right Prism Wing Facet -->
+    <linearGradient id="prismFacetRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+
+    <!-- Core Light Beam (Vibrant Cyan-Violet) -->
+    <linearGradient id="lightBeam" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <!-- Gold Vault Core -->
+    <linearGradient id="goldCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Standalone Aurelia Vault Shield Emblem (Scaled to fill 92% of canvas with zero wasted box margins) -->
+  <g transform="translate(256, 256) scale(1.15) translate(-256, -270)">
+    <!-- Opaque Obsidian Citadel Shield Frame Base -->
+    <path d="M 256 95 L 376 165 V 285 C 376 365 320 420 256 445 C 192 420 136 365 136 285 V 165 Z" fill="#0B0D1B" stroke="url(#rimGrad)" stroke-width="16" stroke-linejoin="round"/>
+    <!-- Left Prism Wing Facet -->
+    <path d="M 256 125 L 166 185 V 275 C 166 335 210 380 256 405 L 256 315 L 200 270 V 210 Z" fill="url(#prismFacetLeft)" opacity="0.95"/>
+    <!-- Right Prism Wing Facet -->
+    <path d="M 256 125 L 346 185 V 275 C 346 335 302 380 256 405 L 256 315 L 312 270 V 210 Z" fill="url(#prismFacetRight)"/>
+    <!-- Central Ascending Light Beam Prism -->
+    <path d="M 256 145 L 300 200 L 256 345 L 212 200 Z" fill="url(#lightBeam)" opacity="0.95"/>
+    <!-- Inner Dark Keyhole Cutout -->
+    <path d="M 256 180 L 280 215 L 256 310 L 232 215 Z" fill="#05070E"/>
+    <!-- Sovereign Gold Core Jewel -->
+    <circle cx="256" cy="245" r="22" fill="url(#goldCore)"/>
+  </g>
+</svg>

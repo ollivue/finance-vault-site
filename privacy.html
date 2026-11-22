@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Finance Vault</title>
+  <meta name="description" content="Privacy Policy for Finance Vault. 100% offline-first architecture with zero external data collection.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="alternate icon" type="image/png" href="icon.png">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="icon.svg" class="brand-logo" alt="Finance Vault Logo" width="32" height="32" />
+        <span>Finance Vault</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html" class="active">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="data-deletion.html">Data Deletion</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="doc-header">
+      <h1>Privacy Policy</h1>
+      <div class="doc-meta">Application: Finance Vault · Effective Date: November 22, 2026</div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Summary: Our 100% Offline Privacy Guarantee</div>
+      <p style="margin: 0; font-size: 0.95rem; color: #CBD5E1;">Finance Vault does not operate remote servers, cloud databases, or third-party analytics trackers. All financial entries, receipts, accounts, and budgets are stored exclusively on your Android device in a private, sandboxed local SQLite database. We never collect, transmit, sell, or view your financial records.</p>
+    </div>
+
+    <section class="doc-section">
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy explains how <strong>Finance Vault</strong> ("we," "our," or "the Application") handles information. Because our architecture is offline-first, your personal financial data remains strictly on your local hardware.</p>
+      <p>We do not require user account creation, social logins, or cloud synchronization to use the application.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>2. Information Stored Locally on Your Device</h2>
+      <p>When you record entries in Finance Vault, the following data is processed and stored <strong>exclusively in a local SQLite database</strong> within the Application's private storage sandbox on your Android device:</p>
+      <ul>
+        <li><strong>Account Records:</strong> Account names, institution nicknames, account types, and opening balances.</li>
+        <li><strong>Transactions:</strong> Dates, amounts, payees/merchants, expense/income categories, custom tags, and split entries.</li>
+        <li><strong>Planning Data:</strong> Monthly budget thresholds, financial savings goals, and recurring payment templates.</li>
+        <li><strong>Attachments:</strong> Receipt images or PDF documents selected by you via Android's native file picker.</li>
+      </ul>
+      <p>None of the data above is ever transmitted over the internet to our servers or to any third party.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>3. In-App Purchase & Payment Processing</h2>
+      <p>Finance Vault offers optional premium upgrades ("Pro") processed exclusively through <strong>Google Play In-App Billing</strong> (Google LLC):</p>
+      <ul>
+        <li>We do not receive or store your credit/debit card numbers, bank credentials, UPI identifiers, or billing addresses.</li>
+        <li>Google Play provides the Application with an encrypted digital token containing the purchased product ID, order ID, and timestamp.</li>
+        <li>The application verifies this token locally on your device via RSA cryptography and saves an entitlement record in an AES-256-GCM encrypted local vault.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>4. Android Permissions & Justifications</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Source / Justification</th>
+              <th>Network Access?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>com.android.vending.BILLING</code></td>
+              <td>Enables Google Play BillingClient to manage Pro subscriptions and lifetime purchases.</td>
+              <td>Google Play Services only</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>Required by Google Play Billing library to verify purchase tokens with Google servers. The core application makes zero HTTP calls.</td>
+              <td>Google Play Billing only</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td>Allows Google Play to detect network connectivity during in-app checkout.</td>
+              <td>No external transfer</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.USE_BIOMETRIC</code><br><code>android.permission.USE_FINGERPRINT</code></td>
+              <td>Included by the local biometric plugin dependency for device-only authentication support; no biometric data or templates ever leave your device.</td>
+              <td>100% Local Device</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The Application does <strong>NOT</strong> request location, contacts, camera, SMS, microphone, or full external storage permissions.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>5. Security & Protection Measures</h2>
+      <ul>
+        <li><strong>OS Sandboxing:</strong> Your local SQLite database (<code>pfm.db</code>) and preferences reside inside Android's private application storage sandbox, isolated from other apps by OS user-level permissions.</li>
+        <li><strong>Screen-Recording Protection:</strong> The application enforces Android's <code>FLAG_SECURE</code> window policy to prevent unauthorized background screen capture or exposure in the recent apps switcher.</li>
+        <li><strong>Encrypted Backups &amp; Vault:</strong> Manual portable backups (<code>.pfm</code>) use AES-256 ZIP encryption and smart sync packages (<code>.pfmsync</code>) use AES-256-GCM with PBKDF2-HMAC-SHA256 key derivation using your chosen password. Purchase entitlement records (<code>entitlement.vault</code>) are also stored locally with AES-256-GCM encryption.</li>
+        <li><strong>Zero Remote Servers:</strong> Because no backend server exists, there is no centralized database vulnerable to remote server data breaches.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>6. Data Deletion & Privacy Rights</h2>
+      <p>Because your data is stored locally, you maintain total autonomy over its retention:</p>
+      <ul>
+        <li><strong>App Storage Clear or Uninstall:</strong> Uninstalling Finance Vault or tapping <strong>Settings &rarr; Apps &rarr; Finance Vault &rarr; Storage &amp; cache &rarr; Clear storage</strong> on your Android device permanently purges all databases, encryption keys, entitlement files, and attachments.</li>
+        <li><strong>Zero Server Retention:</strong> Because no personal or financial data is transmitted off your device, we hold zero server copies to delete.</li>
+        <li>Read our step-by-step <a href="data-deletion.html">Data Deletion Instructions</a>.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>7. Target Audience &amp; Children's Privacy</h2>
+      <p>Finance Vault is intended for adults (ages 18 and over) managing personal financial records. We do not knowingly collect, solicit, or transmit personal information from children under 13 (or minors under applicable local laws). Any data entered locally on a shared device can be erased immediately by clearing app storage or uninstalling the application.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>8. Compliance with Indian &amp; International Privacy Laws</h2>
+      <ul>
+        <li><strong>India Digital Personal Data Protection Act, 2023 (DPDP Act):</strong> All financial data processing occurs strictly locally on your device under your sole control. Zero personal or financial records are collected, transferred, or stored outside your device by the developer.</li>
+        <li><strong>Global Data Minimization Parity:</strong> Aligned with Google Play Data Safety (zero data collected, zero data shared with third parties) and international privacy principles (data minimization, purpose limitation, and local user control).</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>9. Contact & Inquiries</h2>
+      <p>If you have questions or concerns regarding this Privacy Policy, please contact:</p>
+      <p>
+        <strong>Developer Contact:</strong> <a href="mailto:ollivue.dev@gmail.com">ollivue.dev@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand" style="margin-bottom: 0.75rem;">
+          <img src="icon.svg" class="brand-logo" alt="Finance Vault Logo" width="28" height="28" />
+          <span>Finance Vault</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #8B93A3; line-height: 1.5;">
+          The private, 100% offline personal finance manager for Android.
+        </p>
+      </div>
+      <div class="footer-links">
+        <strong style="color: #FFFFFF;">Legal</strong>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="subscriptions.html">Subscription Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="data-deletion.html">Data Deletion</a>
+      </div>
+      <div class="footer-links">
+        <strong style="color: #FFFFFF;">Support</strong>
+        <a href="support.html">Contact Support</a>
+        <a href="mailto:ollivue.dev@gmail.com">Email Support (ollivue.dev@gmail.com)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Finance Vault. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
